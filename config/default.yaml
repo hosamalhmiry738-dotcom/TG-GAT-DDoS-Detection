@@ -1,0 +1,84 @@
+# TG-GAT DDoS Detection Configuration
+
+# Model Parameters
+model:
+  name: "TG-GAT"
+  node_dim: 80
+  edge_dim: 37
+  hidden_dim: 768
+  num_heads: 8
+  num_layers: 3
+  dropout: 0.1
+  gru_layers: 2
+  
+# Training Parameters
+training:
+  epochs: 10
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 1e-5
+  optimizer: "adam"
+  scheduler: "cosine"
+  warmup_epochs: 2
+  gradient_clip: 1.0
+  mixed_precision: true
+  
+# Loss Parameters
+loss:
+  type: "focal"
+  alpha: 1.0
+  gamma: 2.0
+  label_smoothing: 0.1
+  
+# Data Parameters
+data:
+  graph_window_ms: 100
+  max_nodes_per_graph: 1000
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  normalize_features: true
+  handle_imbalance: true
+  
+# GAN Parameters
+gan:
+  latent_dim: 100
+  generator_layers: 4
+  discriminator_layers: 3
+  gan_lr: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  n_critic: 5
+  
+# Evaluation Parameters
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1", "fpr", "detection_time"]
+  save_predictions: true
+  generate_explanations: true
+  
+# XAI Parameters
+xai:
+  explainer: "gnn_explainer"
+  num_samples: 100
+  visualization: true
+  
+# Hardware Parameters
+hardware:
+  device: "auto"  # auto, cpu, cuda
+  num_workers: 4
+  pin_memory: true
+  
+# Logging Parameters
+logging:
+  use_wandb: true
+  project_name: "tg-gat-ddos-detection"
+  log_frequency: 10
+  save_checkpoints: true
+  checkpoint_frequency: 5
+  
+# Paths
+paths:
+  data_dir: "datasets"
+  output_dir: "outputs"
+  checkpoint_dir: "checkpoints"
+  log_dir: "logs"
