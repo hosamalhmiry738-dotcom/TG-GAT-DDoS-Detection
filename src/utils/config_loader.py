@@ -108,7 +108,7 @@ class HardwareConfig:
 class LoggingConfig:
     """Logging configuration data class."""
     use_wandb: bool = True
-    project_name: str = "tg-gat-ddos-detection"
+    project_name: str = "TG_GAT_DDoS_Detection"
     log_frequency: int = 10
     save_checkpoints: bool = True
     checkpoint_frequency: int = 5

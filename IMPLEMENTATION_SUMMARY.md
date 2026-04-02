@@ -7,7 +7,7 @@ This implementation provides a complete, production-ready TG-GAT (Transformer-Ga
 ## Project Structure
 
 ```
-TG-GAT-DDoS-Detection/
+TG_GAT_DDoS_Detection/
 │
 ├── .gitignore
 ├── README.md

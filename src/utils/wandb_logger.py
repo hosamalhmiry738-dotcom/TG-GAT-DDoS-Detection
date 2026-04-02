@@ -41,7 +41,7 @@ class WandbLogger:
             tags: Optional list of tags for the run
         """
         self.config = config
-        self.project_name = project_name or config.get('logging', {}).get('project_name', 'tg-gat-ddos-detection')
+        self.project_name = project_name or config.get('logging', {}).get('project_name', 'TG_GAT_DDoS_Detection')
         self.run_name = run_name or f"tg-gat-{int(time.time())}"
         self.tags = tags or ['ddos-detection', 'tg-gat', 'deep-learning']
         

@@ -71,7 +71,7 @@ hardware:
 # Logging Parameters
 logging:
   use_wandb: true
-  project_name: "tg-gat-ddos-detection"
+  project_name: "TG_GAT_DDoS_Detection"
   log_frequency: 10
   save_checkpoints: true
   checkpoint_frequency: 5
