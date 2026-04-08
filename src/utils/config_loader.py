@@ -7,7 +7,7 @@ files for the TG-GAT model and training pipeline.
 
 import yaml
 import json
-from typing import Dict, Any, Optional, Union
+from typing import Dict, Any, Optional, Union, List
 from pathlib import Path
 import logging
 from dataclasses import dataclass, asdict
